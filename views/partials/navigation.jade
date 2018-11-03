@@ -1,0 +1,4 @@
+if !authenticated
+  +navigation([{"name": "Anmelden", "href": "/user/signin"}, {"name": "Registrieren", "href": "/user/signup"}])
+else
+  +navigation([{"name": "Account", "href": "/protected/user/account"}])

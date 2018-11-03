@@ -1,0 +1,4 @@
+mixin navigation(buttons)
+  nav
+    each button in buttons
+      a(href=button.href).nav-button= button.name

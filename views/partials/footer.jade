@@ -1,0 +1,16 @@
+footer
+  -var url = about.url;
+  -var shareText = about.shareText;
+  p. 
+    #[a(href="https://www.facebook.com/sharer/sharer.php?u="+url target="_blank").share#[img(src="/images/social/facebook.svg").social]]
+    #[a(href="http://twitter.com/share?text="+shareText+"&url="+url target="_blank").share#[img(src="/images/social/twitter.svg").social]]
+    #[a(href="https://api.whatsapp.com/send?text="+shareText+" "+url target="_blank").share#[img(src="/images/social/whatsapp.svg").social]]
+    #[a(href="http://www.reddit.com/submit?url="+url+"&title="+shareText target="_blank").share#[img(src="/images/social/reddit.svg").social]]
+    #[a(href="https://plus.google.com/share?url="+url target="_blank").share#[img(src="/images/social/googleplus.svg").social]]
+  
+  -var mail = about.mail;
+  p #[a(href="mailto:"+mail) Kontakt]
+    
+  -var date = new Date();
+  -var year = date.getFullYear();
+  p © #{year} Fabian Bösiger

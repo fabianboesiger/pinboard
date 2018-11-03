@@ -1,0 +1,15 @@
+extends /layout
+
+block content
+  
+  form(action="signin" method="post")
+    h1 Anmelden
+    div.holder
+      label(for="username") Benutzername
+      input(type="text" name="username" id="username")
+    div.holder
+      label(for="password") Passwort
+      input(type="password" name="password" id="password")
+    div.holder
+      input(type="submit" value="Bestätigen")
+    +errors(errors)

@@ -1,0 +1,237 @@
+:root{
+  --primary-color: #000f1f;
+  --secondary-color: #dfdfdf;
+  --tertiary-color: #9fafbf;
+  --link-color: #007fff;
+  --error-color: #ff3f00;
+
+  --content-padding: 32px;
+  --text-size: 16px;
+
+  --element-margin: 16px;
+  --input-padding: 8px;
+  --input-border-radius: 16px;
+
+  --font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+
+
+html{
+  width: 100%;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  overflow-x: hidden;
+}
+
+body{
+  width: 100%;
+  margin: 0px;
+  font: var(--text-size) var(--font-family);
+}
+
+
+
+h1, h2, h3, h4, h5, h6{
+  margin: var(--element-margin);
+}
+h1{
+  font-size: 32px;
+}
+h2{
+  font-size: 24px;
+}
+h3{
+  font-size: 16px;
+}
+
+ul{
+  padding-left: 24px;
+  margin: var(--element-margin);
+  list-style: disc;
+}
+
+pre{
+  margin: var(--element-margin);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+form{
+  max-width: 384px;
+  margin: auto;
+}
+
+input{
+  box-sizing: border-box;
+  width: 100%;
+  background-color: var(--secondary-color);
+  border: none;
+  outline: none;
+  padding: var(--input-padding);
+  border-radius: var(--input-border-radius);
+  font: var(--text-size) var(--font-family);
+  -webkit-appearance: none;
+  transition: 0.2s;
+}
+input:hover, input:focus{
+  background-color: var(--tertiary-color);
+}
+
+p{
+  margin: var(--element-margin);
+  overflow-wrap: break-word;
+}
+
+a{
+  outline: none;
+  text-decoration: none;
+  color: var(--link-color);
+  position: relative;
+}
+a:not([class]):not([id])::before{
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 1px;
+  background-color: var(--link-color);
+  transform: scaleX(0);
+  transition: 0.2s;
+}
+a:not([class]):not([id]):hover::before, a:not([class]):not([id]):focus::before{
+  transform: scaleX(1);
+}
+
+
+
+header, nav, #content, footer{
+  box-sizing: border-box;
+}
+
+header, nav, footer{
+  text-align: center;
+}
+
+#title{
+  display: inline-block;
+  font-size: 64px;
+  margin: var(--element-margin);
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+nav{
+  width: 100%;
+  z-index: 1;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0px;
+  background-color: var(--secondary-color);
+}
+nav a.nav-button{
+  display: inline-block;
+  padding: 16px;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+  outline: none;
+  transition: 0.2s;
+  position: relative;
+}
+nav a.active.nav-button{
+  color: var(--tertiary-color);
+}
+nav a.nav-button::before{
+  content: "";
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  width: calc(100% - 32px);
+  height: 2px;
+  background-color: var(--primary-color);
+  transform: scaleX(0);
+  transition: 0.2s;
+}
+nav a.nav-button:hover:not(.active)::before, nav a.nav-button:focus:not(.active)::before{
+  transform: scaleX(1);
+}
+
+#content-holder{
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding-top: var(--content-padding);
+  padding-bottom: var(--content-padding);
+}
+#content{
+  margin: auto;
+  max-width: 1024px;
+}
+
+
+
+#map{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+#view, #overlay, #navigation{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+
+
+ul.errors{
+  color: var(--error-color);
+}
+
+a.button{
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  text-decoration: none;
+  text-align: center;
+  outline: none;
+  padding: var(--input-padding);
+  transition: 0.2s;
+}
+a.button:first-child{
+  border-top-left-radius: var(--input-border-radius);
+  border-top-right-radius: var(--input-border-radius);
+}
+a.button:last-child{
+  border-bottom-left-radius: var(--input-border-radius);
+  border-bottom-right-radius: var(--input-border-radius);
+}
+a.button:hover, a.button:focus{
+  background-color: var(--tertiary-color);
+}
+
+div.holder{
+  margin: var(--element-margin);
+}
+
+
+
+a.share{
+  margin: 4px;
+}
+a.share:focus img.social{
+  transform: scale(1.2);
+}
+
+img.social{
+  width: 48px;
+  height: 48px;
+  transition: 0.2s;
+}
+img.social:hover, img.social:focus{
+  transform: scale(1.2);
+}
