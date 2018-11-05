@@ -1,0 +1,8 @@
+extends /layout
+
+block content
+  h1 Fehler
+  if error.status
+    p Fehlercode #{error.status}
+  p= message
+  pre #{error.stack}
