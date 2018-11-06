@@ -1,3 +1,11 @@
-#title{
+body{
+  margin: 0px;
+}
 
+main{
+  position: relative;
+}
+
+article{
+  position: absolute;
 }
