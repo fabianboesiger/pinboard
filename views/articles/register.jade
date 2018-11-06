@@ -1,0 +1,21 @@
+extends /articles/layout
+
+block content
+
+  //script(type="text/javascript" src="/javascripts/password.js")
+  
+  h1 Registrieren
+
+  form(action="signup" method="post")
+    div.labeled
+      label(for="username") Benutzername
+      input(type="text" name="username" id="username")
+    div.labeled
+      label(for="password") Passwort
+      input(type="password" name="password" id="password")
+    div.labeled
+      label(for="confirm-password") Passwort wiederholen
+      input(type="password" id="confirm-password")
+    div.labeled
+      input(type="submit" value="Bestätigen")
+    +errors(errors)

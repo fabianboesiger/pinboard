@@ -1,5 +1,11 @@
+html{
+  background-color: #000000;
+}
+
 body{
   margin: 0px;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 main{
@@ -8,4 +14,9 @@ main{
 
 article{
   position: absolute;
+  padding: 32px;
+}
+
+h1, h2{
+  font-family: sans-serif;
 }
