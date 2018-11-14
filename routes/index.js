@@ -11,9 +11,7 @@ router.get('/', function(req, res, next){
   res.render("index");
 });
 
-router.get('/fetch', function(req, res, next){
-  var authenticated = false;
-  res.render("articles/article", {"width": Math.floor(Math.pow(Math.random(), 8)*2+1), "height": Math.floor(Math.pow(Math.random(), 8)*2+1), "color": "hsl("+Math.floor(Math.random()*360)+", 50%, 50%)"});
-});
+router.use('/fetch', require('./fetch'));
+router.use('/articles', require('./articles/index'));
 
 module.exports = router;

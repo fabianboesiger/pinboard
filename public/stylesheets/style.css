@@ -1,5 +1,6 @@
 html{
-  background-color: #000000;
+  background-color: #1f1f1f;
+  font: 16px sans-serif;
 }
 
 body{
@@ -10,14 +11,41 @@ body{
 
 main{
   position: relative;
+  width: calc(2048px - 16px);
+  margin: auto;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+@media only screen and (max-width: 2048px){
+  main{
+    width: calc(100% - 16px);
+    margin: 8px;
+  }
 }
 
 article{
   position: absolute;
   box-sizing: border-box;
-  padding: 32px;
+  box-shadow: inset 0px 0px 512px -128px,
+              0px 0px 4px #000000;
+  transition: 0.2s;
+}
+article:hover{
+  z-index: 100;
+  box-shadow: inset 0px 0px 512px -128px,
+              0px 0px 32px #000000;
+  transform: scale(1.02);
 }
 
-h1, h2{
-  font-family: sans-serif;
+h1, h2, p{
+  margin: 32px;
+}
+
+h1{
+  font-size: 48px;
+}
+
+h2{
+  font-size: 32px;
 }
