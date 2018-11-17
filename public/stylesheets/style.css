@@ -1,27 +1,102 @@
+:root{
+
+}
+
+@keyframes fadein{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
 html{
-  background-color: #1f1f1f;
+  background-color: #dfdfdf;
   font: 16px sans-serif;
+  background-repeat:repeat;
 }
 
 body{
-  margin: 0px;
   overflow-x: hidden;
   overflow-y: scroll;
+  margin: 0px;
 }
 
-main{
+header{
+  box-sizing: border-box;
+  background-color: #dfdfdf;
+  padding-top: 128px;
+  padding-bottom: 128px;
   position: relative;
-  width: calc(2048px - 16px);
-  margin: auto;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  z-index: 2;
+}
+
+h1{
+  color: #1f1f1f;
+  margin: 0px;
+  margin-left: 16px;
+  margin-right: 16px;
+  font-size: 256px;
+  text-align: center;
+  animation: fadein 1s forwards;
+}
+
+#slogan{
+  color: #1f1f1f;
+  text-align: center;
+  font-size: 24px;
+  font-style: italic;
+  display: block;
 }
 
 @media only screen and (max-width: 2048px){
-  main{
-    width: calc(100% - 16px);
-    margin: 8px;
+
+  header{
+    padding-top: 6.25vw;
+    padding-bottom: 6.25vw;
   }
+
+  h1{
+    font-size: 12.5vw;
+  }
+
+}
+
+nav{
+  position: sticky;
+  left: 0px;
+  top: 0px;
+  background-color: #dfdfdf;
+  z-index: 1;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+  box-shadow: 0px 0px 32px #000000;
+}
+
+nav ul{
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+  text-align: center;
+}
+
+nav ul li{
+  color: #1f1f1f;
+  display: inline-block;
+  margin: 16px;
+  font-weight: bold;
+}
+
+main{
+  padding: 8px;
+}
+
+#background{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #1f1f1f;
 }
 
 article{
@@ -31,21 +106,27 @@ article{
               0px 0px 4px #000000;
   transition: 0.2s;
 }
-article:hover{
-  z-index: 100;
+article:hover, article:focus{
   box-shadow: inset 0px 0px 512px -128px,
               0px 0px 32px #000000;
   transform: scale(1.02);
 }
 
-h1, h2, p{
+h2{
+  font-size: 32px;
   margin: 32px;
 }
 
-h1{
-  font-size: 48px;
+p{
+  margin: 32px;
 }
 
-h2{
-  font-size: 32px;
+#board{
+  position: relative;
+
+}
+
+.center{
+  max-width: 2048px;
+  margin: auto;
 }

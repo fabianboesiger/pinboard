@@ -4,5 +4,10 @@ html
     include partials/head
     include partials/scripts
   body
+    div#background
+    include partials/header
+    include partials/navigation
     main
-      block content
+      div.center
+        div#board
+        block content

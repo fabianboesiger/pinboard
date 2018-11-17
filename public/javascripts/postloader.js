@@ -1,16 +1,16 @@
 $(function(){
 
   let $window = $(window);
-  let $main = $("main");
+  let $board = $("#board");
 
   function visible($element){
     return $element.offset().top < $window.scrollTop() + $window.height() * 4;
   }
 
   function fetch(){
-    if($main.children().length === 0 || visible($main.children().last())){
+    if($board.children().length === 0 || visible($board.children().last())){
       $.get("/fetch", function(data){
-        $main.append(data);
+        $board.append(data);
         if(update){
           update();
         }
@@ -24,6 +24,7 @@ $(function(){
 
   $window.scroll(function(){
     fetch();
+    $board.css("height", $window.scrollTop());
   });
   $window.resize(function(){
     fetch();

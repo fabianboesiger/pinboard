@@ -2,18 +2,18 @@ var update = undefined;
 
 $(function(){
 
-  let $main = $("main");
+  let $board = $("#board");
   let margin = 16;
   let used = [];
 
   update = function(){
 
     let size = {
-      width: $main.width(),
-      height: $main.height()
+      width: $board.width(),
+      height: $board.height()
     }
 
-    let cells = Math.floor(size.width/512)+1;
+    let cells = Math.ceil(size.width/512);
 
     $article = $("article");
 
